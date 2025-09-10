@@ -1,18 +1,26 @@
 
 # Vehicle Rental System
 
-## Planned Features & Requirements
+## Snippet
+```java
+...
+        List<Vehicle> vehicles2 = vehicleRentalService.viewInventory(VehicleType.HATCH_BACK, new Range(0, 0));
+        System.out.println(vehicles2.size());
 
-### Filters
-- Location-based filtering
-- Price filtering
-- Model/Year filtering
-- Ratings filtering
-- Combinational filters (optional)
-
-### Sorting
-- Sort by closer locations
-- Sort by better rating
+        FilterItem searchFilters = new FilterItem(
+            FilterTypes.AND,
+            new BinaryFilterItemData(
+                new FilterItem(
+                    FilterTypes.PRICE,
+                    new RangeFilterItemData(new Range(150,152))
+                ),
+                new FilterItem(
+                    FilterTypes.TYPE,
+                    new TypeItemData(VehicleType.SEDAN)
+                )
+            )
+        );
+```
 
 ### Core Operations
 - Book vehicle
@@ -21,9 +29,15 @@
 - Pay for vehicle
 - Return vehicle
 
-### Design Considerations
-- Vehicle factory pattern
-- Get vehicle next availability
-- Payment strategy interface & adapter
-	- Example: `paypalPayment = new PaypalPaymentStrategy()`
-	- Usage: `rentalSystem.processPayment(IPaymentStrategy strategy)`
+
+## Planned Features & Requirements
+
+### Filters
+- Location-based filtering
+- Model/Year filtering
+- Ratings filtering
+
+### Sorting
+- Sort by closer locations
+- Sort by better rating
+
