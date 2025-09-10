@@ -1,32 +1,29 @@
-<!-- # Further requirements
 
-We can have more filters tomorrow:
-- You need location based filtering.
-- Price
-- model/year
-- Ratings
+# Vehicle Rental System
 
-We can more sortBys
-- closer locations
-- better rating
+## Planned Features & Requirements
 
-Optional
-- Combinational filters
- -->
+### Filters
+- Location-based filtering
+- Price filtering
+- Model/Year filtering
+- Ratings filtering
+- Combinational filters (optional)
 
-<!-- 
- // bookVehicle
- // checkStatus
- // cancelBooking
- // payForVehicle
- // returnVehicle
+### Sorting
+- Sort by closer locations
+- Sort by better rating
 
+### Core Operations
+- Book vehicle
+- Check booking status
+- Cancel booking
+- Pay for vehicle
+- Return vehicle
 
-// Add factory for vehicles
-
-// get vehicle next avialablity...
-
-<!-- // Payment Strategy Interface
-// Payment Adapter
-<!-- paypalPayment = new PaypalPaymentStrategy() -->
-<!-- // rentalSystem.processPayment(IPaymentStrategy strategy) --> --> -->
+### Design Considerations
+- Vehicle factory pattern
+- Get vehicle next availability
+- Payment strategy interface & adapter
+	- Example: `paypalPayment = new PaypalPaymentStrategy()`
+	- Usage: `rentalSystem.processPayment(IPaymentStrategy strategy)`
